@@ -1,0 +1,23 @@
+{
+  "name": "alvorada-backend",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Jvalentim",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/server.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
