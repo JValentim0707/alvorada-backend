@@ -1,12 +1,16 @@
 import express, { Express, Request, Response } from "express";
+// import cors from 'cors'
 
 // Import app from routes
 import app from "./routes/index"
 
-const PORT: number = 3000
+const PORT: number = 8080
 const version: string = "1.0.0"
 
 app.use(express.json())
+// app.use(cors( {
+//   origin: ' http://localhost:3000'
+// }))
 
 app.get("/api/version", (req: Request, res: Response) => {
   res.send(`Backend Running on Version ${version}`);
