@@ -1,12 +1,16 @@
 import express, { Router, Request, Response } from "express";
 
 // Import Models
-import { addFavoriteBreed, getAllFavoriteBreeds } from "../model/favorites";
+import { addFavoriteBreed, getAllFavoriteBreeds, removeFavoriteBreed } from "../model/favorites";
 
 const router: Router = express.Router()
 
 interface IFavoriteBody {
   breed: string,
+}
+
+interface IFavoriteParamsRemove {
+  breed: string
 }
 
 router.post('/', async(req: Request<{}, {}, IFavoriteBody>, res: Response<string>) => {
@@ -24,10 +28,22 @@ router.post('/', async(req: Request<{}, {}, IFavoriteBody>, res: Response<string
 
 router.get('/', async(req: Request, res: Response<string[]> ) => {
   try {
-
     const allFavoriteBreeds: string[] = await getAllFavoriteBreeds()
 
     res.json(allFavoriteBreeds)
+  } catch (error: any) {
+    console.log(error)
+    res.status(500).json(error);
+  }
+})
+
+router.delete('/:breed', async(req: Request<IFavoriteParamsRemove>, res: Response<string> ) => {
+  try {
+    const breedName: string = req.params.breed
+
+    await removeFavoriteBreed(breedName)
+    
+    res.status(200).send('Success')
   } catch (error: any) {
     console.log(error)
     res.status(500).json(error);

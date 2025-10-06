@@ -23,7 +23,7 @@ router.get('/', async(req: Request, res: Response<string[]> ) => {
     const { data } = await api.get<IBreeds>("/breeds/list/all")
     const allBreeds: string[] = Object.keys(data.message)
 
-    res.json(allBreeds)
+    res.status(200).json(allBreeds)
   } catch (error: any) {
     console.log(error)
     res.status(500).json(error);
@@ -37,7 +37,7 @@ router.get('/:breed/images', async(req: Request<IBreeedParams>, res: Response<st
     const { data } = await api.get<IBreedImages>(`/breed/${breedName}/images/random/3`)
     const allBreedImages: string[] = data.message
 
-    res.json(allBreedImages)
+    res.status(200).json(allBreedImages)
   } catch (error: any) {
     console.log(error)
     res.status(500).json(error);

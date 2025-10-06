@@ -8,11 +8,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && npm run mock",
+    "mock": "copyfiles -u 1 src/data/**/* dist/",
     "dev": "nodemon ./src/server.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/supertest": "^6.0.3",
+    "copyfiles": "^2.4.1",
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
