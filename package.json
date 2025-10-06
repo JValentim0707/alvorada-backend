@@ -9,8 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && npm run mock",
-    "mock": "copyfiles -u 1 data/**/* dist/",
-    "dev": "nodemon ./src/server.ts"
+    "mock": "copyfiles -u 0 \"data/**/*\" dist",
+    "dev": "nodemon ./src/server.ts",
+    "start": "node dist/server.js"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
