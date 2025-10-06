@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && npm run mock",
-    "mock": "copyfiles -u 1 src/data/**/* dist/",
+    "mock": "copyfiles -u 1 data/**/* dist/",
     "dev": "nodemon ./src/server.ts"
   },
   "devDependencies": {

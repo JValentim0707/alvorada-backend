@@ -13,7 +13,7 @@ const app: Express = express();
 app.use(express.json())
 
 app.use(cors( {
-  origin: FRONTEND_URL
+  origin:'*'
 }))
 
 app.use("/api/breeds", breeds)

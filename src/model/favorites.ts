@@ -5,7 +5,7 @@ interface IFavorites {
   favorites: string[]
 }
 
-const favoriteDataJsonPath: string = "C:/Users/jvale/Projects/alvorada-technical/alvorada-backend/src/data/favorites.json"
+const favoriteDataJsonPath: string = path.join(process.cwd(), 'data', 'favorites.json');
 
 const addFavoriteBreed = async (breedName: string):Promise<undefined> => {
   try {
