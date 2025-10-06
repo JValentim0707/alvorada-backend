@@ -3,6 +3,9 @@ import express, { Express, Request, Response } from "express";
 
 // Import app from routes
 import app from "./routes/index"
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const PORT: number = 8080
 const version: string = "1.0.0"
